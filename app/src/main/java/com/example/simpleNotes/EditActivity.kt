@@ -35,11 +35,12 @@ class EditActivity : AppCompatActivity() {
 
         if (oldNote != null){
             binding.textView.setText(oldNote!!.text)
-            binding.textView.requestFocus()
             val simpleDate = SimpleDateFormat("dd/MM/yy hh:mm:ss")
             val date = simpleDate.format(Date(oldNote!!.date!! * 1000))
             binding.dateTextView.text = "Edited $date"
         }
+
+        binding.textView.requestFocus()
 
         viewModel = ViewModelProvider(this)[NotesViewModel::class.java]
 
