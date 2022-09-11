@@ -88,7 +88,7 @@ class NotesAdapter:
         val simpleDate = SimpleDateFormat("dd/MM/yy hh:mm:ss", Locale.getDefault())
         val date = simpleDate.format(Date(dataSet[position].date!! * 1000))
 
-        viewHolder.dateTextView.text = "Last edited at\n$date"
+        viewHolder.dateTextView.text = "Edited \n$date"
 
         viewHolder.textView.setOnClickListener {
             val i = Intent(viewHolder.textView.context, EditActivity::class.java)

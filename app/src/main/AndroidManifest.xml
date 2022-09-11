@@ -17,13 +17,9 @@
         <activity
             android:name="com.example.simpleNotes.EditActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false"
-            android:label="@string/title_activity_edit"
-            android:theme="@style/Theme.MyApplication" />
-        <activity
-            android:name=".Edit"
-            android:exported="false"
-            android:label="@string/title_activity_edit"
+            android:label=""
             android:theme="@style/Theme.MyApplication" />
         <activity
             android:name="com.example.simpleNotes.MainActivity"

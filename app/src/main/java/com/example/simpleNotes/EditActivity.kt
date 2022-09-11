@@ -1,6 +1,7 @@
 package com.example.simpleNotes
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
@@ -28,12 +29,16 @@ class EditActivity : AppCompatActivity() {
         binding = ActivityEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         if (oldNote != null){
             binding.textView.setText(oldNote!!.text)
             binding.textView.requestFocus()
             val simpleDate = SimpleDateFormat("dd/MM/yy hh:mm:ss")
             val date = simpleDate.format(Date(oldNote!!.date!! * 1000))
-            binding.dateTextView.text = "Last edited at $date"
+            binding.dateTextView.text = "Edited $date"
         }
 
         viewModel = ViewModelProvider(this)[NotesViewModel::class.java]
@@ -67,6 +72,13 @@ class EditActivity : AppCompatActivity() {
         // Clear static variable before activity is killed
         oldNote = null
         finish()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
