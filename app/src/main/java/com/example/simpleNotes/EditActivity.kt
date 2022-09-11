@@ -60,7 +60,7 @@ class EditActivity : AppCompatActivity() {
         super.onBackPressed()
         val timeStamp: Long = System.currentTimeMillis() / 1000L
         val text = binding.textView.text.toString()
-        if (text != "Note" && text != "") {
+        if (text != "Note" && text != "" && oldNote?.text != text) {
             val note = Note(oldNote?.id ?: 0, text, timeStamp)
 
             if (oldNote != null) {
