@@ -8,7 +8,7 @@
     android:layout_marginTop="5dp"
     android:background="@color/cardview_dark_background"
     android:gravity="center_vertical"
-    app:cardBackgroundColor="@color/material_dynamic_neutral30"
+    app:cardBackgroundColor="@color/note_background"
     app:cardCornerRadius="5dp">
 
     <LinearLayout

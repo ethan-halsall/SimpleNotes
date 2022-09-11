@@ -27,7 +27,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="65dp"
         android:layout_marginBottom="15dp"
-        app:cardBackgroundColor="@color/material_dynamic_neutral30"
+        app:cardBackgroundColor="@color/note_background"
         android:gravity="center_vertical"
         app:cardCornerRadius="5dp">
 
@@ -54,6 +54,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"/>
+
 
     </com.google.android.material.card.MaterialCardView>
 
